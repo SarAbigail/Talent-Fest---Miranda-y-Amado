@@ -1,7 +1,5 @@
 export default () => {
   const template = `
-<<<<<<< HEAD:src/lib/Views/abogado.js
-=======
   <div>
     <p class="last-req"><strong>Revisa tus últimos Requerimientos</strong></p>
     <ul>
@@ -19,7 +17,6 @@ export default () => {
   <div>
   <button type="submit" class="button-req">Crear Requerimiento</button>
   </div>
->>>>>>> d85d670894ad403a4decf789b1c368588dbaafe2:src/lib/Views/abogado/abogado.js
     <a href="mailto:scahuantico@gmail.com?body=Estimada%20te%20enviamos%20el%20siguiente%20link&subject=Miranda%20esta%20revisando%20tu%20caso"> Enviar email</a>
     <progress value="0" id="uploader" max="100"></progress>
     <input type="file" value="upload" id="fileButton">

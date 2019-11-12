@@ -18,7 +18,7 @@ export const signIn = (e) => {
   if (btnIniciarRegistrar.dataset.action === 'login') {
     signInEmail(inputMail.value, inputPassword.value)
       .then(() => {
-        window.location.hash = '#/b';
+        window.location.hash = '#/abogado';
       })
       .catch((error) => { // Para ver si devuelve un error
         switch (error.code) {

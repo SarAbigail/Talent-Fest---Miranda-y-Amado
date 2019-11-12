@@ -13,5 +13,8 @@ export const viewTemplate = (routes) => {
     default:
       container.appendChild(components.login());
       break;
+    case '#/abogado/abogadoReq':
+      container.appendChild(components.abogadoReq());
+
   }
 };

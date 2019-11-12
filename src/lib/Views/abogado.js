@@ -23,3 +23,6 @@ export default () => {
 
   return sectionElem;
 };
+
+
+//     <a href="mailto:scahuantico@gmail.com?body=Estimada%20te%20enviamos%20el%20siguiente%20link&subject=Miranda%20esta%20revisando%20tu%20caso"> Enviar email</a>

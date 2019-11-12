@@ -1,8 +1,8 @@
-import a from '../Views/a.js';
-import b from '../Views/b.js';
+import login from '../Views/login.js';
+import abogado from '../Views/abogado.js';
 
 
 export const components = {
-  A: a,
-  B: b,
+  login: login,
+  abogado: abogado,
 };

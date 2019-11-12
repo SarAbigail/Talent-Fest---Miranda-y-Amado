@@ -15,7 +15,7 @@ export default () => {
     </ul>
   </div>
   <div>
-  <button type="submit" class="button-req">Crear Requerimiento</button>
+  <a href="#/abogadoReq" class="button-req">Crear Requerimiento</a>
   </div>
     <a href="mailto:scahuantico@gmail.com?body=Estimada%20te%20enviamos%20el%20siguiente%20link&subject=Miranda%20esta%20revisando%20tu%20caso"> Enviar email</a>
     <progress value="0" id="uploader" max="100"></progress>

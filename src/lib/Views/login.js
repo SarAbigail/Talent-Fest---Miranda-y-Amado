@@ -17,18 +17,13 @@ export default () => {
           
           <button class="btn login-btn" id="btn-iniciar-registrar" data-action ='login'>Iniciar Sesión</button>
           <div class="cont-btn-redes display-flex">
-            <p class="text-peq">O bien ingresar con...</p>
-              <button class="btn-curve btn-icon btn-google" id="login-google" style="background-image: url(./Img/icon-google.png)"></button>
-              <button class="btn-curve none btn-icon btn-facebook"></button>
           </div>
-          <p id="ms-iniciar-registrar" class="text-peq">¿No tienes una cuenta? <a href= "#/b" class="" id="btn-change-iniciar-registrar">Regístrate</a></p> 
-          </form>`;
+                    </form>`;
 
   const sectionElem = document.createElement('section');
   sectionElem.setAttribute('class', 'sec-autentificacion display-flex');
   sectionElem.innerHTML += template; // Hasta que no cree este elemento
   const inputPassword = sectionElem.querySelector('#input-password');
-  const loginGoogle = sectionElem.querySelector('#login-google');
   const btnIniciarRegistrar = sectionElem.querySelector('#btn-iniciar-registrar');
   const btnMostrarClave = sectionElem.querySelector('#icon-clave');
 

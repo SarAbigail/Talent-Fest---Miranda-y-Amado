@@ -4,14 +4,14 @@ export const viewTemplate = (routes) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
   switch (routes) {
-    case '#/':
-      container.appendChild(components.A());
+    case '#/login':
+      container.appendChild(components.login());
       break;
-    case '#/b':
-      container.appendChild(components.B());
+    case '#/abogado':
+      container.appendChild(components.abogado());
       break;
     default:
-      container.appendChild(components.A());
+      container.appendChild(components.login());
       break;
   }
 };

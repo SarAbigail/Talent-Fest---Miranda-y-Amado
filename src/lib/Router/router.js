@@ -22,5 +22,12 @@ export const viewTemplate = (routes) => {
     case '#/dueVendedor':
       container.appendChild(components.dueVendedor());
       break;
+    case '#/confirmacion-requerimientos':
+      container.appendChild(components.form());
+      break;
+    case '#/formCliente':
+      container.appendChild(components.formCliente());
+      break;
   }
 };
+

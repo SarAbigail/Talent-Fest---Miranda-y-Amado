@@ -1,7 +1,9 @@
 export default () => {
   const template = `
   <div>
-  <a href="https://firebasestorage.googleapis.com/v0/b/talent-fest-miranda-y-amado.appspot.com/o/1%2Fdl.png?alt=media&token=82fac344-37a3-4cae-b37e-ee57e40fb77f" download>sara</a>
+  <div>
+  <a href="#/abogadoReq" class="button-req">Crear Requerimiento</a>
+  </div>
     <p class="last-req"><strong>Revisa tus últimos Requerimientos</strong></p>
     <ul>
       <li class="list">
@@ -15,21 +17,15 @@ export default () => {
       </li>
     </ul>
   </div>
-  <div>
-  <button type="submit" class="button-req">Crear Requerimiento</button>
-  </div>
-    <a href="mailto:scahuantico@gmail.com?body=Estimada%20te%20enviamos%20el%20siguiente%20link&subject=Miranda%20esta%20revisando%20tu%20caso"> Enviar email</a>
-    <progress value="0" id="uploader" max="100"></progress>
-    <input type="file" value="upload" id="fileButton">
-    <button id="download">Descargar</button>
-    <a href="https://firebasestorage.googleapis.com/v0/b/talent-fest-miranda-y-amado.appspot.com/o/1%2Fdl.png?alt=media&token=82fac344-37a3-4cae-b37e-ee57e40fb77f" target="_blank" download >des</a>
-    <div id="mensaje"> </div>
+ 
+   
     
     `;
   const sectionElem = document.createElement('section');
   sectionElem.setAttribute('class', 'sec-autentificacion display-flex');
   sectionElem.innerHTML += template; // Hasta que no cree este elemento
 
+<<<<<<< HEAD
   const uploader = sectionElem.querySelector('#uploader');
   const fileButton = sectionElem.querySelector('#fileButton');
   fileButton.addEventListener('change', (e) => {
@@ -79,6 +75,9 @@ export default () => {
     .catch(function (error) {
       // Uh-oh, an error occurred!
     });
+=======
+ 
+>>>>>>> 83777c37bd8596e7868de58df160f6d200348822
   return sectionElem;
 
 };

@@ -12,7 +12,7 @@ export const dueComprador = () => {
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h4>DUE DILIGENCE DE VENDEDOR</h4>
+          <h4>DUE DILIGENCE DE COMPRADOR</h4>
           <div class="table-responsive">    
             <table id="mytable" class="table">
               <thead>

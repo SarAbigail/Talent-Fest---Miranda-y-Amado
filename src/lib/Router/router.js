@@ -22,7 +22,7 @@ export const viewTemplate = (routes) => {
     case '#/dueVendedor':
       container.appendChild(components.dueVendedor());
       break;
-    case '#/form':
+    case '#/confirmacion-requerimientos':
       container.appendChild(components.form());
       break;
   }

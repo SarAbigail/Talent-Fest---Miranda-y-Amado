@@ -1,3 +1,10 @@
+
+let array = [];
+
+export const fn = (arr) => {
+arr.forEach(doc => array.push(doc)
+);
+}
 export const form = () => {
   const template = `
   <body>
@@ -6,8 +13,12 @@ export const form = () => {
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card card-signin flex-row my-5">
           <div class="card-img-left d-none d-md-flex">
-          <p>Aqui lista de checklist</p>
-             <!-- Background image for card set in CSS! -->
+          <p> Documentos Seleccionados </p>
+          
+          <ol id="listaDocumentos">
+             
+          </ol>
+
           </div>
           <div class="card-body">
             <h5 class="card-title text-center">Register</h5>
@@ -43,6 +54,26 @@ export const form = () => {
   const sectionElem = document.createElement('section');
   sectionElem.setAttribute('class', 'sec-autentificacion display-flex');
   sectionElem.innerHTML += template; // Hasta que no cree este elemento
+  const listaDocumentos = sectionElem.querySelector('#listaDocumentos');
+
+  array.forEach( doc => {
+    const list = document.createElement('li');
+    let acum = '';
+    acum += `
+              <li>${doc}</li>
+            `;
+
+    list.innerHTML = `${acum}`;
+    listaDocumentos.appendChild(list);
+  })
+
+  const createReq = (caso, item, nombre, email) => {
+    firebase.firestore().collection(caso).doc(item).set({
+    Cliente: nombre,
+    Estado: 'pendiente',
+    Correo: email,
+  })
+}
 
   return sectionElem;
 };

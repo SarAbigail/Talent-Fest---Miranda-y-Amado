@@ -21,9 +21,7 @@ export default () => {
     <progress value="0" id="uploader" max="100"></progress>
     <input type="file" value="upload" id="fileButton">
     <button id="download">Descargar</button>
-    <a href="https://firebasestorage.googleapis.com/v0/b/talent-fest-miranda-y-amado.appspot.com/o/1%2Fdl.png?alt=media&token=82fac344-37a3-4cae-b37e-ee57e40fb77f" target="_blank" download >des</a>
     <div id="mensaje"> </div>
-    
     `;
   const sectionElem = document.createElement('section');
   sectionElem.setAttribute('class', 'sec-autentificacion display-flex');
@@ -44,18 +42,19 @@ export default () => {
   });
   const storage = firebase.storage();
   const btnDownload = sectionElem.querySelector('#download');
-  const imgRef = storage.ref('1/dl.png');
+  const imgRef = storage.ref('1/logosise.png');
   btnDownload.addEventListener('click', () => {
-    imgRef.getDownloadURL().then((url) => {
-      console.log(url);
-      const anchor = document.createElement('a');
-      anchor.href = url;
-      div.setAttribute('download',true);
-      btnDownload.appendChild(div);
-    })
+    imgRef.updateMetadata({contentDisposition: 'attachment'})
+    .then(() => imgRef.getDownloadURL())
+    .then(function(url) {
+      const ancle = document.createElement('a');
+      ancle.href = url;
+      ancle.download = url;
+      ancle.click();
+    }).catch(function(error) {
+      console.log(error)
+      // Handle any errors
+    });
   });
   return sectionElem;
-
 };
-
-

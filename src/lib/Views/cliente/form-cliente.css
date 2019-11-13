@@ -1,0 +1,21 @@
+.table {
+    border: solid 2px;
+    border-color: #f37a00;
+    padding: 5px;
+}
+
+.tr-colorA {
+    background-color: #f37a008a;
+}
+
+.tr-colorB {
+    background-color: #f37a0033;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f37a008a;
+}
+
+.container {
+    padding: 2rem 5rem;
+}

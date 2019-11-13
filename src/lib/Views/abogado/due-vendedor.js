@@ -143,6 +143,10 @@ export const dueVendedor = () => {
         checkbox.addEventListener('click', (e) => {
           array.push(e.target.id)
         });
+        sectionElem.querySelector('#checkall').addEventListener('click',() => {
+          all.push(dataReq)
+          console.log(all);
+        })
       })
 
     })
@@ -151,7 +155,7 @@ export const dueVendedor = () => {
     const continuar = sectionElem.querySelector('#continuar');
     continuar.addEventListener('click', ()=>{
       fn(array);
-    })
+    });
 
   return sectionElem;
 };

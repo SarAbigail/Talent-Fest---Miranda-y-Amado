@@ -43,8 +43,9 @@ export const form = () => {
                 <textarea class="form-control" placeholder="Mensaje" disabled>Estimado(a)<br/> Envio el requerimiento de imformación para el proceso </textarea>
               </div>
 
-              <button class="btn-lg btn-primary btn-block text-uppercase" type="button" id ="send">Enviar</button>
-              <hr class="my-4">
+              <button class="btn-lg btn-primary btn-block text-uppercase" type="submit" 
+              data-toggle="modal" data-target="#exampleModal">Enviar</button>
+
             </form>
           </div>
         </div>
@@ -52,8 +53,26 @@ export const form = () => {
     </div>
   </div>
 </body>
-`;
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <h5 class="modal-title" id="exampleModalLabel">¡Requerimiento enviado correctamente!</h5> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
   const sectionElem = document.createElement('section');
   sectionElem.setAttribute('class', 'sec-autentificacion display-flex');
   sectionElem.innerHTML += template; // Hasta que no cree este elemento

@@ -5,7 +5,7 @@ import {
   fn
 } from './form.js'
 
-
+let all = [];
 let array = [];
 export const dueVendedor = () => {
   const template = `
@@ -93,6 +93,8 @@ export const dueVendedor = () => {
   `
 
 
+
+
   ;
 
   $(document).ready(function () {
@@ -126,7 +128,7 @@ export const dueVendedor = () => {
         const contenedor1 = document.createElement('tr');
         let acum = '';
         acum += `
-                  <td class="text-center">
+                  <td class="text-center px-3">
                     <input type="checkbox" value="${doc.value}" class="checkthis" id="${doc.value}" />
                   </td>
                   <td class="text-left">

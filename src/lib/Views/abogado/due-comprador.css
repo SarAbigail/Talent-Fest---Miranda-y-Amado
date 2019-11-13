@@ -8,17 +8,12 @@ div.table-title {
   width: 100%;
 }
 
-.table-title h4 {
-   color: black;
-   font-size: 30px;
-   font-style:normal;
-   font-family: "Roboto", helvetica, arial, sans-serif;
-   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-}
 
 
+input[type=checkbox] { 
+  transform: scale(2) !important;
+  }
 /*** Table Styles **/
-
 .table-fill {
   background: white;
   border-radius:3px;
@@ -76,7 +71,7 @@ tr:last-child {
 }
  /*color td oscuro*/
 tr:nth-child(odd) td {
- background:  rgb(255, 255, 255);
+ background:  #f8f5f1;
 }
  /*color hover claro*/
 tr:nth-child(odd):hover td {

@@ -130,7 +130,7 @@ export const dueComprador = () => {
           const contenedor1 = document.createElement('tr');
           let acum = '';
           acum += `
-                  <td class="checkbox-large text-center px-3">
+                  <td class="text-center px-3">
                     <input type="checkbox" value="${doc.value}" class="checkthis" />
 
                   </td>

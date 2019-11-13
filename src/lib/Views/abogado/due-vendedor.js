@@ -93,8 +93,6 @@ export const dueVendedor = () => {
   `
 
 
-
-
   ;
 
   $(document).ready(function () {

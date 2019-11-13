@@ -1,6 +1,9 @@
 export default () => {
   const template = `
   <div>
+  <div>
+  <a href="#/requerimiento" class="button-req">Crear Requerimiento</a>
+  </div>
     <p class="last-req"><strong>Revisa tus últimos Requerimientos</strong></p>
     <ul>
       <li class="list">

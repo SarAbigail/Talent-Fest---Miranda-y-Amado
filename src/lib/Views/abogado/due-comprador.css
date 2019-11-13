@@ -1,0 +1,20 @@
+.btn-choose {
+    font-family: 'Hind Guntur', sans-serif;
+    display: flex;
+    font-size: 30px;
+    background-color: #4f92ad;
+    color: whitesmoke;
+    border: outset;
+    width: 60vh;
+    padding: 3px;
+    padding-top: 10px;
+    margin: 15px;
+}
+.due-choose {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+

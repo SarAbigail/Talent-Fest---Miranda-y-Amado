@@ -13,5 +13,14 @@ export const viewTemplate = (routes) => {
     default:
       container.appendChild(components.login());
       break;
+    case '#/requerimiento':
+      container.appendChild(components.requerimiento());
+      break;
+    case '#/dueComprador':
+      container.appendChild(components.dueComprador());
+      break;
+    case '#/dueVendedor':
+      container.appendChild(components.dueVendedor());
+      break;
   }
 };

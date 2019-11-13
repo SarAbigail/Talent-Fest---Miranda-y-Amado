@@ -42,10 +42,8 @@ export const form = () => {
               <div class="form-label-group">
                 <textarea class="form-control" placeholder="Mensaje" disabled>Estimado(a)<br/> Envio el requerimiento de imformación para el proceso </textarea>
               </div>
-
-              <button class="btn-lg btn-primary btn-block text-uppercase" type="submit" 
-              data-toggle="modal" data-target="#exampleModal">Enviar</button>
-
+              <button class="btn-lf btn-primary btn-block text-uppercase type="button" id="send" data-toggle="modal" data-target="#exampleModal">Enviar</button>
+              <hr class="my-4">
             </form>
           </div>
         </div>

@@ -41,7 +41,7 @@ export const dueComprador = () => {
 </nav>
 
 
-<div id="page-content">
+<div class="page-content"id="page-content">
   <div class="container text-center">
 
         <div class="texto_uno p-2 mw-80 mb-3">
@@ -59,10 +59,10 @@ export const dueComprador = () => {
               <table id="mytable" class="table-fill ">
                 <thead class="bg-white">
                   <tr>
-                  <th class="bg-white text-center">
+                  <th class="th bg-white text-center">
                     <input type="checkbox" id="checkall" />
                   </th>
-                  <th class="bg-white font-weight-normal text-dark">DOCUMENTO</th>
+                  <th class="th bg-white font-weight-normal text-dark">DOCUMENTO</th>
                   </tr>
                 </thead>
                 <tbody class="table-hover" id ="contenedor">
@@ -71,7 +71,7 @@ export const dueComprador = () => {
 
    
 
-            <div>
+            <div class="btns-atras">
                <a href="#/requerimiento"> <button> Volver </button> </a>
                <a href="#/confirmacion-requerimientos"> <button id="continuar"> Continuar </button> </a> 
 

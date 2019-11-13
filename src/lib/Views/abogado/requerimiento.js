@@ -30,7 +30,7 @@ export const requerimiento = () => {
 </nav>
 
 
-<div id="page-content">
+<div class="page-content" id="page-content">
   <div class="container text-center">
 
     <div class="texto_uno p-2 mw-80 mb-3">

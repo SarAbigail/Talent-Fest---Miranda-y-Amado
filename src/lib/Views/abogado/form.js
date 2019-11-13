@@ -2,8 +2,8 @@
 let array = [];
 
 export const fn = (arr) => {
-arr.forEach(doc => array.push(doc)
-);
+  arr.forEach(doc => array.push(doc)
+  );
 }
 export const form = () => {
   const template = `
@@ -24,23 +24,27 @@ export const form = () => {
             <h5 class="card-title text-center">Información del requerimiento</h5>
             <form class="form-signin">
               <div class="form-label-group">
-                <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
                 <label for="inputUserame">Nombre del proyecto</label>
+                <input type="text" id="inputProyecto" class="form-control" placeholder="Nombre del proyecto" required >
+                
               </div>
 
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
                 <label for="inputEmail">Nombre del cliente</label>
+                <input type="text" id="inputName" class="form-control" placeholder="Nombre del cliente" required >
+                
               </div>
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <label for="inputPassword">Correo electrónico</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Correo" required>
+                
               </div>
               <div class="form-label-group">
-                <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                <textarea class="form-control" placeholder="Mensaje" disabled>Estimado(a)<br/> Envio el requerimiento de imformación para el proceso </textarea>
               </div>
 
-              <button class="btn-lg btn-primary btn-block text-uppercase" type="submit">Enviar</button>
+              <button class="btn-lg btn-primary btn-block text-uppercase" type="button" id ="send">Enviar</button>
+              <a id="mailto" href="mailto:scahuantico@gmail.com?subject=Miranda&Amado%20esta%20revisando%20tu%20caso&body=Estimada%20Susana,%20te%20envío%20el%20requerimiento%20de%20información%20para%20el%20proyecto%20Divorcio">Enviar mail</a>
               <hr class="my-4">
             </form>
           </div>
@@ -56,24 +60,50 @@ export const form = () => {
   sectionElem.innerHTML += template; // Hasta que no cree este elemento
   const listaDocumentos = sectionElem.querySelector('#listaDocumentos');
 
-  array.forEach( doc => {
+  array.forEach(doc => {
     const list = document.createElement('li');
     let acum = '';
     acum += `
               <li>${doc}</li>
             `;
-
     list.innerHTML = `${acum}`;
     listaDocumentos.appendChild(list);
   })
 
+  const inputProyecto = sectionElem.querySelector('#inputProyecto');
+  const inputName = sectionElem.querySelector('#inputName');
+  const inputEmail = sectionElem.querySelector('#inputEmail');
+  let nombreDelProyecto = '';
+  let nombreDelCliente = '';
+  let emailDelCliente = '';
+  inputProyecto.addEventListener('change', (e) => {
+    const proyecto = e.target.value;
+    nombreDelProyecto = proyecto;
+  });
+  inputName.addEventListener('change', (e) => {
+    const nombre = e.target.value;
+    nombreDelCliente = nombre;
+  });
+  inputEmail.addEventListener('change', (e) => {
+    const email = e.target.value;
+    emailDelCliente = email;
+  });
+  console.log(inputEmail);
+
   const createReq = (caso, item, nombre, email) => {
     firebase.firestore().collection(caso).doc(item).set({
-    Cliente: nombre,
-    Estado: 'pendiente',
-    Correo: email,
-  })
-}
+      Cliente: nombre,
+      Estado: 'pendiente',
+      Correo: email,
+    })
+  }
+
+  sectionElem.querySelector('#send').addEventListener('click', () => {
+    window.location.href = `mailto:${emailDelCliente}?subject=MirandayAmado%20esta%20revisando%20tu%20caso&body=Estimada%20${nombreDelCliente}%20te%20envío%20el%20requerimiento%20de%20información%20para%20el%20proceso%20${nombreDelProyecto}`;
+      array.forEach(doc => {
+        createReq(nombreDelProyecto, doc, nombreDelCliente, emailDelCliente);
+      })
+  });
 
   return sectionElem;
 };

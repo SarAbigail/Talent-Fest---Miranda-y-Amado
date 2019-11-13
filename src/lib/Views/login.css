@@ -71,9 +71,9 @@ html {
     margin-top:0;
     margin-bottom: 30px;
 }
-.form_container {
+/* .form_container {
     /*margin-top: 100px;*/
-}
+} */
 .login_btn {
     width: 50%;
     background: #11181b !important;

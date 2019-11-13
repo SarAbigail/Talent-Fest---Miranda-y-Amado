@@ -1,9 +1,13 @@
 import login from '../Views/login.js';
 import abogado from '../Views/abogado/abogado.js';
-import { abogadoReq } from '../Views/abogado/abogado-req.js';
+import { requerimiento } from '../Views/abogado/requerimiento.js';
+import { dueComprador } from '../Views/abogado/due-comprador.js'
+import { dueVendedor } from '../Views/abogado/due-vendedor.js';
 
 export const components = {
   login: login,
   abogado: abogado,
-  abogadoReq: abogadoReq,
+  requerimiento: requerimiento,
+  dueComprador: dueComprador,
+  dueVendedor: dueVendedor,
 };

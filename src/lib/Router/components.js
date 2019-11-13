@@ -5,6 +5,7 @@ import { dueComprador } from '../Views/abogado/due-comprador.js'
 import { dueVendedor } from '../Views/abogado/due-vendedor.js';
 import { form } from '../Views/abogado/form.js'
 import { formCliente } from '../Views/cliente/form-cliente.js';
+import prueba from '../Views/abogado/clienteprueba.js';
 
 export const components = {
   login: login,
@@ -14,4 +15,5 @@ export const components = {
   dueVendedor: dueVendedor,
   form: form,
   formCliente: formCliente,
+  prueba:prueba,
 };

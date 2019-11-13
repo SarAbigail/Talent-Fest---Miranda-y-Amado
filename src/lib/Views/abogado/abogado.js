@@ -4,10 +4,10 @@ export default () => {
   <div>
   <a href="#/requerimiento" class="button-req">Crear Requerimiento</a>
   </div>
-    <p class="last-req"><strong>Revisa tus últimos Requerimientos</strong></p>
+    <p class="last-req"><strong> Revisa tus últimos Requerimientos</strong></p>
     <ul>
       <li class="list">
-        <a class="list-req" href="#proyecto A">Proyecto A</a>
+        <a class="list-req" href="#/clienteprueba">Proyecto A</a>
       </li>
       <li class="list">
         <a class="list-req" href="#proyecto B">Proyecto B</a>
@@ -55,6 +55,19 @@ export default () => {
       });
   };
   getReq()
+  
 
 return sectionElem;
 };
+
+// var name, email, photoUrl, uid, emailVerified;
+
+// if (user != null) {
+//   name = user.displayName;
+//   email = user.email;
+//   photoUrl = user.photoURL;
+//   emailVerified = user.emailVerified;
+//   uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+//                    // this value to authenticate with your backend server, if
+//                    // you have one. Use User.getToken() instead.
+// }

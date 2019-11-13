@@ -1,6 +1,7 @@
 export default () => {
   const template = `
   <div>
+  <a href="https://firebasestorage.googleapis.com/v0/b/talent-fest-miranda-y-amado.appspot.com/o/1%2Fdl.png?alt=media&token=82fac344-37a3-4cae-b37e-ee57e40fb77f" download>sara</a>
     <p class="last-req"><strong>Revisa tus últimos Requerimientos</strong></p>
     <ul>
       <li class="list">
@@ -50,10 +51,34 @@ export default () => {
       console.log(url);
       const anchor = document.createElement('a');
       anchor.href = url;
-      div.setAttribute('download',true);
+      div.setAttribute('download', true);
       btnDownload.appendChild(div);
     })
   });
+
+  // Create a reference to the file whose metadata we want to change
+  var forestRef = firebase.storage().ref().child('1/dl.png');
+
+  // Create file metadata to update
+  var newMetadata = {
+    public: true,
+    cacheControl: 'public,max-age=300',
+    contentType: 'image/jpeg',
+    contentLanguage: null,
+    customMetadata: {
+      whatever: 'we feel like',
+    },
+  };
+
+  // Update metadata properties
+  forestRef
+    .updateMetadata(newMetadata)
+    .then(function (metadata) {
+      // Updated metadata for 'images/forest.jpg' is returned in the Promise
+    })
+    .catch(function (error) {
+      // Uh-oh, an error occurred!
+    });
   return sectionElem;
 
 };

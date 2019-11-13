@@ -75,8 +75,8 @@ html {
     /*margin-top: 100px;*/
 }
 .login_btn {
-    width: 100%;
-    background: var(--corange) !important;
+    width: 50%;
+    background: #11181b !important;
     color: white !important;
 }
     .login_btn:focus {

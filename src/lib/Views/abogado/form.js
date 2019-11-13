@@ -44,7 +44,6 @@ export const form = () => {
               </div>
 
               <button class="btn-lg btn-primary btn-block text-uppercase" type="button" id ="send">Enviar</button>
-              <a id="mailto" href="mailto:scahuantico@gmail.com?subject=Miranda&Amado%20esta%20revisando%20tu%20caso&body=Estimada%20Susana,%20te%20envío%20el%20requerimiento%20de%20información%20para%20el%20proyecto%20Divorcio">Enviar mail</a>
               <hr class="my-4">
             </form>
           </div>
@@ -99,7 +98,7 @@ export const form = () => {
   }
 
   sectionElem.querySelector('#send').addEventListener('click', () => {
-    window.location.href = `mailto:${emailDelCliente}?subject=MirandayAmado%20esta%20revisando%20tu%20caso&body=Estimada%20${nombreDelCliente}%20te%20envío%20el%20requerimiento%20de%20información%20para%20el%20proceso%20${nombreDelProyecto}`;
+    window.location.href = `mailto:${emailDelCliente}?subject=MirandayAmado%20esta%20revisando%20tu%20caso&body=Estimada%20${nombreDelCliente}%20te%20envío%20el%20requerimiento%20de%20información%20para%20el%20proceso%20${nombreDelProyecto}%20https://sarabigail.github.io/LIM010-social-network/src/#/signup`;
       array.forEach(doc => {
         createReq(nombreDelProyecto, doc, nombreDelCliente, emailDelCliente);
       })

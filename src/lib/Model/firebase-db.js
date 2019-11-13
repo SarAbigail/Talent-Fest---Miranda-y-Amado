@@ -89,3 +89,6 @@ export const editLikes = (idD, like) => {
     likes: like,
   });
 };
+export const verRequerimientos = (coleccion, tipo) => {
+  return firebase.firestore().collection(coleccion).doc(tipo).get();
+ };

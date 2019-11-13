@@ -1,4 +1,5 @@
 
+
 let array = [];
 
 export const fn = (arr) => {
@@ -43,9 +44,8 @@ export const form = () => {
                 <textarea class="form-control" placeholder="Mensaje" disabled>Estimado(a)<br/> Envio el requerimiento de imformación para el proceso </textarea>
               </div>
 
-              <button class="btn-lg btn-primary btn-block text-uppercase" type="submit" 
-              data-toggle="modal" data-target="#exampleModal">Enviar</button>
-
+              <button class="btn-lg btn-primary btn-block text-uppercase" type="button" id ="send">Enviar</button>
+              <hr class="my-4">
             </form>
           </div>
         </div>
@@ -109,15 +109,25 @@ export const form = () => {
   console.log(inputEmail);
 
   const createReq = (caso, item, nombre, email) => {
-    firebase.firestore().collection(caso).doc(item).set({
+    firebase.firestore().collection('AllCases').doc('cada caso').collection(caso).doc(item).set({
       Cliente: nombre,
       Estado: 'pendiente',
       Correo: email,
+      timeReq: new Date(),
+      idDoc,
     })
   }
 
+  // sectionElem.querySelector('#send').addEventListener('click', () => {
+  //   window.location.href = `mailto:${emailDelCliente}?subject=MirandayAmado%20esta%20revisando%20tu%20caso&body=Estimada%20${nombreDelCliente}%20te%20envío%20el%20requerimiento%20de%20información%20para%20el%20proceso%20${nombreDelProyecto}%20https://sarabigail.github.io/LIM010-social-network/src/#/signup%20Para%20la%20siguiente%20plataforma%20tendras%20que%20ingresar%20con%20el%20siguiente%20Usuario:cliente@gmail.com%20y%20contraseña:123456`;
+  //     array.forEach(doc => {
+  //       createReq(nombreDelProyecto, doc, nombreDelCliente, emailDelCliente);
+  //     })
+  // });
+
+
   sectionElem.querySelector('#send').addEventListener('click', () => {
-    window.location.href = `mailto:${emailDelCliente}?subject=MirandayAmado%20esta%20revisando%20tu%20caso&body=Estimada%20${nombreDelCliente}%20te%20envío%20el%20requerimiento%20de%20información%20para%20el%20proceso%20${nombreDelProyecto}%20https://sarabigail.github.io/LIM010-social-network/src/#/signup`;
+    window.location.href = `mailto:${emailDelCliente}?subject=MirandayAmado%20esta%20revisando%20tu%20caso&body=Estimada%20${nombreDelCliente}%20te%20envío%20el%20requerimiento%20de%20información%20para%20el%20proceso%20${nombreDelProyecto}%20https://sarabigail.github.io/LIM010-social-network/src/#/signup%20Para%20la%20siguiente%20plataforma%20tendras%20que%20ingresar%20con%20el%20siguiente%20Usuario:cliente@gmail.com%20y%20contraseña:123456`;
       array.forEach(doc => {
         createReq(nombreDelProyecto, doc, nombreDelCliente, emailDelCliente);
       })

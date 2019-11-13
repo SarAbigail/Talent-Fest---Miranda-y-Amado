@@ -4,6 +4,8 @@ import {
 import { fn } from './form.js'
 
 let array = [];
+let all = [];
+
 
 export const dueComprador = () => {
   const template = `
@@ -86,9 +88,12 @@ export const dueComprador = () => {
       box.querySelectorAll('.checkthis').forEach((checkbox) =>
         checkbox.addEventListener('click', (e) => {
           array.push(e.target.id)
-          // console.log(array)
+          console.log(array)
         }))
-
+        sectionElem.querySelector('#checkall').addEventListener('click',() => {
+          all.push(dataReq)
+          console.log(all);
+        })
     })
     .catch((err) => console.log('error', err));
 

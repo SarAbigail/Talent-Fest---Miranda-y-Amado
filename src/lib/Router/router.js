@@ -25,5 +25,9 @@ export const viewTemplate = (routes) => {
     case '#/form':
       container.appendChild(components.form());
       break;
+    case '#/formCliente':
+      container.appendChild(components.formCliente());
+      break;
   }
 };
+

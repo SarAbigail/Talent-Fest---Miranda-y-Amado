@@ -1,7 +1,10 @@
 import {
   verRequerimientos
 } from '../../Model/firebase-db.js'
+import { fn } from './form.js'
 
+
+let array = [];
 export const dueVendedor = () => {
   const template = `
 
@@ -23,6 +26,11 @@ export const dueVendedor = () => {
               <tbody id ="contenedor">
               </tbody>
             </table>
+
+            <div>
+               <a href="#/requerimiento"> <button> Volver </button> </a>
+               <a href="#/confirmacion-requerimientos"> <button id="continuar"> Continuar </button> </a> 
+            </div>
           </div>
         </div>
       </div>
@@ -53,26 +61,41 @@ export const dueVendedor = () => {
   const box = sectionElem.querySelector('#contenedor');
   box.innerHTML = '';
 
-    verRequerimientos('requerimientos', 'DUE DILIGENCE DE VENDEDOR')
-      .then(docs => {
-        const dataReq = docs.data().requerimientos;
-        dataReq.forEach(doc => {
-          const contenedor1 = document.createElement('tr');
-          let acum = '';
-          acum += `
+  verRequerimientos('requerimientos', 'DUE DILIGENCE DE VENDEDOR')
+    .then(docs => {
+      const dataReq = docs.data().requerimientos;
+      //let i = 0;
+      dataReq.forEach(doc => {
+        const contenedor1 = document.createElement('tr');
+        let acum = '';
+        //i++;
+        acum += `
                   <td>
-                    <input type="checkbox" value="${doc.value}" class="checkthis" />
+                    <input type="checkbox" value="${doc.value}" class="checkthis" id="${doc.value}" />
                   </td>
                   <td>
                     <p>${doc.value}</p>
                   </td>
                 `;
-          contenedor1.innerHTML = `${acum}`;
-          console.log('c',contenedor1);
-          box.appendChild(contenedor1);
-        });
-      })
-      .catch((err) => console.log('error', err));
+
+        contenedor1.innerHTML = `${acum}`;
+        box.appendChild(contenedor1);
+
+      });
+
+      box.querySelectorAll('.checkthis').forEach((checkbox) =>
+        checkbox.addEventListener('click', (e) => {
+          array.push(e.target.id)
+          // console.log(array)
+        }))
+
+    })
+    .catch((err) => console.log('error', err));
+
+  const continuar = sectionElem.querySelector('#continuar');
+  continuar.addEventListener('click', () => {
+    fn(array);
+  });
 
   return sectionElem;
 };

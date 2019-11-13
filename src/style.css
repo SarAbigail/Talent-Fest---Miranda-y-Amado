@@ -1,4 +1,18 @@
-::-webkit-scrollbar {
+html,
+body {
+  height: 100%;
+}
+#sticky-footer {
+  flex-shrink: none;
+}
+#page-content {
+  flex: 1 0 auto;
+}
+
+
+
+
+/* ::-webkit-scrollbar {
   width: 5px;
   cursor:pointer;
 }
@@ -7,7 +21,7 @@
   border-radius: 50px;
 }
 ::-webkit-scrollbar-track {
-  background: rgb(243, 243, 243);
+
   border-radius: 50px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -16,7 +30,7 @@
 }
 
 
-/*GENERAL-----------------------------------------*/
+
 *{
   border: 0;
   margin: 0;
@@ -63,7 +77,7 @@ color: #272727;
   border-bottom: 1px solid #d7d7d7;
   margin: 7px 0;
 }
-.btn-curve{ /* Pendiente por quitar */
+.btn-curve{ 
   padding: 0px;
   border-radius: 50px;
   cursor: pointer;
@@ -147,15 +161,17 @@ background-image: url(./lib/Img/icon-edit.png);
 .none {
   display:none;
 }
-/*------------------------*/
+
+
+
+
 body{
   font-family: 'Montserrat', sans-serif;
   color: #6d8d8d;
-  background-color: #f4fefc;
+
 }
 .sec-autentificacion{
   flex-direction: column;
-  background-color: #fcf9ec;
   min-height: 100vh;
   width: 100%;
 }
@@ -215,7 +231,7 @@ body{
   text-align: center;
   font-size: 12px;
   margin: 7px 0 10px;
-  /* height: 30px; */
+ 
 }
 .icon-alert{
   background-image: url(./lib/Img/icon-alert.png);
@@ -257,7 +273,7 @@ body{
 .sec-autentificacion .text-peq a{
   font-weight: bold;
 }
-/* user-card */
+
 .user-card{flex-grow: 1;width: 30%;flex-direction: column;margin: 10px 15px 20px;justify-content: initial;max-width: 600px;min-width: 300px;}
 .photo-current-user{
   width: 150px;
@@ -273,14 +289,14 @@ body{
     flex-wrap: wrap;
     padding: 20px 20px;
 }
-/*Formulario-----------*/
+
 .container-post-form{
     width: 70%;
     flex-grow: 1;
     max-width: 600px;
     min-width: 300px;
 }
-/*Formulario------------------------*/
+
 .box-form-user{
     background-color: white;
     flex-wrap: wrap;
@@ -315,7 +331,7 @@ body{
     height: 100%;
     width: 131%;
     font-size: 0;
-    /* background-color: #d2691e42; */
+ 
     position: absolute;
     right: 0;
     margin: auto;
@@ -356,7 +372,7 @@ body{
     bottom: -56px;
     right: 132px;
 }
-/*Formulario Fin------------------------*/
+
 
 
 
@@ -401,4 +417,5 @@ flex-direction: row;
 .container-net{
     flex-wrap: nowrap;
 }
-}
+} 
+*/

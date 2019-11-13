@@ -4,30 +4,88 @@ import {
 
 export const dueVendedor = () => {
   const template = `
+ 
+  <!-- Navigation -->
+  <nav class="navbar container text-center navbar-expand-lg colores-nav navbar-white static-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img class="img" src="./lib/Img/Logo-principal---colores-web.png" alt="">
+    </a>
 
-  <div class="container hidden" id="cardComprador">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h4>DUE DILIGENCE DE VENDEDOR</h4>
-          <div class="table-responsive">    
-            <table id="mytable" class="table">
-              <thead>
-                <tr>
-                <th>
-                  <input type="checkbox" id="checkall" />
-                </th>
-                <th>DOCUMENTO</th>
-                </tr>
-              </thead>
-              <tbody id ="contenedor">
-              </tbody>
-            </table>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li>
+            <img src="./lib/Img/avatar1.png">
+        </li>
+        <li class="nav-item active">
+          <p class=" px-2 text-dark">Antonia</p>
+        </li>
+<li>
+<img src="./lib/Img/flecha.png">
+</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div id="page-content">
+  <div class="container text-center">
+
+        <div class="texto_uno p-2 mw-80 mb-3">
+          <p class="text-white mb-0 ">DUE DILIGENCE PARA VENDEDOR</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mx-auto p-4" style="width: 50rem;"> 
+      <div class="borde">
+      <div class="container" id="cardComprador">
+      <div class="container">
+        <div class="row">
+            <div class="table-responsive">    
+              <table id="mytable" class="table-fill ">
+                <thead class="bg-white">
+                  <tr>
+                  <th class="bg-white text-center">
+                    <input type="checkbox" id="checkall" />
+                  </th>
+                  <th class="bg-white font-weight-normal text-dark">DOCUMENTO</th>
+                  </tr>
+                </thead>
+                <tbody class="table-hover" id ="contenedor">
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>`;
+        </div>
+  
+      </div>
+     
+
+</div>
+</div>
+
+<footer id="sticky-footer" class="py-4 m text-white-50">
+  <div class="container text-center">
+    <small>Copyright M Y A</small>
+  </div>
+</footer>
+</body>
+  `
+
+
+
+  
+  ;
 
   $(document).ready(function () {
     $("#mytable #checkall").click(function () {
@@ -60,15 +118,15 @@ export const dueVendedor = () => {
           const contenedor1 = document.createElement('tr');
           let acum = '';
           acum += `
-                  <td>
+                  <td class="text-center">
                     <input type="checkbox" value="${doc.value}" class="checkthis" />
                   </td>
-                  <td>
-                    <p>${doc.value}</p>
+                  <td class="text-left">
+                    <p class="mb-0 px-2 font-weight-normal">${doc.value}</p>
                   </td>
                 `;
           contenedor1.innerHTML = `${acum}`;
-          console.log('c',contenedor1);
+    
           box.appendChild(contenedor1);
         });
       })

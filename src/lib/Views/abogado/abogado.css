@@ -1,3 +1,4 @@
+
 .button-req {
   display: inline-block;
   padding: .3rem .6rem;
@@ -14,11 +15,9 @@
   border: 1px solid transparent;
   transition: all 500ms ease;
 }
-
 .list {
   list-style-type:disc;
 }
-
 .last-req {
   font-size: 20px;
 }

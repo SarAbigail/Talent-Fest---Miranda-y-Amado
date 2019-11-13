@@ -1,23 +1,44 @@
-.btn-choose {
-    font-family: 'Hind Guntur', sans-serif;
-    display: flex;
-    font-size: 30px;
-    background-color: #4f92ad;
-    color: whitesmoke;
-    border: outset;
-    width: 60vh;
-    padding: 3px;
-    padding-top: 10px;
-    margin: 15px;
+html,
+body {
+  height: 100%;
 }
-.due-choose {
-    display: flex;
+#page-content {
+  flex: 1 0 auto;
 }
-
-.container {
-  padding: 2rem 0rem;
+.m{
+  background: rgba(50, 82, 98, 0.57);
 }
-
-h4 {
-  margin: 2rem 0rem 1rem;
+.img{
+  width: 120px;
+}
+.texto_uno{
+  width: 30rem;
+  padding: .25rem 1.25rem;
+  margin-top: 22px;
+  background-color:#325262 ;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.borde{
+  /* width: fit-content; */
+  height: 22rem;
+  border: 2px solid orange
+}
+.margin{
+  margin-top: 5%;
+}
+.padding{
+  background-color: #325262;
+}
+.paddin{
+  padding: 4rem;
+  background-color: #325262;
+}
+.colores-nav{
+  border-bottom: 1px solid #325262;
+  height: 78px;
+  padding: .0 2rem;
+  margin-left: 30px;
+}
+#sticky-footer {
+  flex-shrink: none;
 }

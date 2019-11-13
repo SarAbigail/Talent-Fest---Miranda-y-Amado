@@ -17,18 +17,19 @@ export default () => {
       </li>
     </ul>
   </div>
+
  
   <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
   <div class="container text-center">
     <small>Copyright &copy; Your Website</small>
   </div>
 </footer>
+
     `;
   const sectionElem = document.createElement('section');
   sectionElem.setAttribute('class', 'sec-autentificacion display-flex');
   sectionElem.innerHTML += template; // Hasta que no cree este elemento
 
- 
 
   return sectionElem;
 };

@@ -1,9 +1,15 @@
 import {
   verRequerimientos
 } from '../../Model/firebase-db.js'
+import { fn } from './form.js'
+
+let array = [];
+let all = [];
+
 
 export const dueComprador = () => {
   const template = `
+
 
   <!-- Navigation -->
   <nav class="navbar container text-center navbar-expand-lg colores-nav navbar-white static-top">
@@ -61,6 +67,13 @@ export const dueComprador = () => {
                 <tbody class="table-hover" id ="contenedor">
                 </tbody>
               </table>
+
+   
+
+            <div>
+               <a href="#/requerimiento"> <button> Volver </button> </a>
+               <a href="#/confirmacion-requerimientos"> <button id="continuar"> Continuar </button> </a> 
+
             </div>
           </div>
         </div>
@@ -118,17 +131,34 @@ export const dueComprador = () => {
           acum += `
                   <td class="checkbox-large text-center px-3">
                     <input type="checkbox" value="${doc.value}" class="checkthis" />
+
                   </td>
                   <td class="text-left">
                     <p class="mb-0 px-2 font-weight-light">${doc.value}</p>
                   </td>
                 `;
-          contenedor1.innerHTML = `${acum}`;
-          console.log('c',contenedor1);
-          box.appendChild(contenedor1);
-        });
-      })
-      .catch((err) => console.log('error', err));
+
+        contenedor1.innerHTML = `${acum}`;
+        box.appendChild(contenedor1);
+
+      });
+
+      box.querySelectorAll('.checkthis').forEach((checkbox) =>
+        checkbox.addEventListener('click', (e) => {
+          array.push(e.target.id)
+          console.log(array)
+        }))
+        sectionElem.querySelector('#checkall').addEventListener('click',() => {
+          all.push(dataReq)
+          console.log(all);
+        })
+    })
+    .catch((err) => console.log('error', err));
+
+  const continuar = sectionElem.querySelector('#continuar');
+  continuar.addEventListener('click', () => {
+    fn(array);
+  });
 
   return sectionElem;
 };
